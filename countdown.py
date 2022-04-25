@@ -1,5 +1,5 @@
 from datetime import datetime
-import datetime as dattime
+import datetime as dtime
 import turtle as t
 
 # Turtle setup
@@ -59,7 +59,7 @@ goal = datetime.strptime(date_goal, date_format_str)
 while True:
     wn.update()
 
-    temp_today_date = str(dattime.datetime.now())
+    temp_today_date = str(dtime.datetime.now())
     today_date = str(temp_today_date[0:4]) + "/" + str(temp_today_date[5:7]) + "/" + str(
         temp_today_date[8:10]) + " " + str(temp_today_date[11:])
     today = datetime.strptime(today_date, date_format_str)
