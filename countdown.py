@@ -1,3 +1,9 @@
+# setting dates
+# if you want to change them in order to use this program for another event,
+# read the "README.md" file for further information. (You can simply open the file using Notepad.)
+date_start = "2022/02/09 23:00:00.000000"
+date_goal = "2022/7/29 12:00:00.000000"
+
 import datetime
 import turtle as t
 
@@ -15,7 +21,7 @@ pen1.color("white")
 pen1.penup()
 pen1.hideturtle()
 pen1.goto(0, 140)
-pen1.write("Waiting finished in percent:", align="center", font=("Courier", 24, "normal"))
+pen1.write("Time waited in percent:", align="center", font=("Courier", 24, "normal"))
 pen1.goto(0, 20)
 pen1.color("lime")
 pen1.write("Already waited:", align="center", font=("Courier", 24, "normal"))
@@ -44,11 +50,6 @@ pen4.penup()
 pen4.hideturtle()
 pen4.goto(0, -170)
 
-
-# setting dates
-date_start = "2022/02/09 23:00:00.000000"
-date_goal = "2022/7/29 12:00:00.000000"
-
 # transforming dates
 date_format_str = '%Y/%m/%d %H:%M:%S.%f'
 start = datetime.datetime.strptime(date_start, date_format_str)
@@ -65,9 +66,7 @@ while True:
 
     # calculation
     diff_tot = goal - start
-    # diff_tot_sec = diff_tot.total_seconds()
     diff_done = today - start
-    # diff_done_sec = diff_done.total_seconds()
     done = diff_done / diff_tot
     done_perc = done * 100
 
