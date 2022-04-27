@@ -1,5 +1,4 @@
-from datetime import datetime
-import datetime as dtime
+import datetime
 import turtle as t
 
 # Turtle setup
@@ -52,17 +51,17 @@ date_goal = "2022/7/29 12:00:00.000000"
 
 # transforming dates
 date_format_str = '%Y/%m/%d %H:%M:%S.%f'
-start = datetime.strptime(date_start, date_format_str)
-goal = datetime.strptime(date_goal, date_format_str)
+start = datetime.datetime.strptime(date_start, date_format_str)
+goal = datetime.datetime.strptime(date_goal, date_format_str)
 
 
 while True:
     wn.update()
 
-    temp_today_date = str(dtime.datetime.now())
+    temp_today_date = str(datetime.datetime.now())
     today_date = str(temp_today_date[0:4]) + "/" + str(temp_today_date[5:7]) + "/" + str(
         temp_today_date[8:10]) + " " + str(temp_today_date[11:])
-    today = datetime.strptime(today_date, date_format_str)
+    today = datetime.datetime.strptime(today_date, date_format_str)
 
     # calculation
     diff_tot = goal - start
@@ -79,3 +78,4 @@ while True:
     pen3.write(f"{str(diff_done)}", align="center", font=("Courier", 24, "normal"))
     pen4.clear()
     pen4.write(f"{str(diff_tot - diff_done)}", align="center", font=("Courier", 24, "normal"))
+
